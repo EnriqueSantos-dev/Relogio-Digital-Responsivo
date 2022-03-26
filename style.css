@@ -27,17 +27,37 @@ body{
     padding: 0 20px;
 }
 .box-clock{
+    position: relative;
     display:flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter:blur(10px) ;
     box-shadow: 0 0 10px #333;
-    width: 330px;
-    height: 150px;
-    border-radius: 30px 30px 10px 10px;
+    width: 400px;
+    height: 200px;
+    border-radius: 20px 20px 0 0 ;
     padding: 10px 20px;
     gap: 10px;
+    border: solid 5px rgba(255, 255, 255, 0.4);
+    transition: all .3s ease-in-out;
+}
+.box-clock::before,.box-clock::after{
+    position: absolute;
+    content: '';
+    width: 50%;
+    margin: 0 auto;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.4);
+    
+}
+.box-clock::before{
+    top:0;
+    border-radius: 0 0 3px 3px;
+}
+.box-clock::after{
+    bottom: 0;
+    border-radius: 3px 3px 0 0;
 }
 .box-clock i{
     font-size: 40px;
@@ -45,9 +65,9 @@ body{
 }
 .hours,.seconds,.minutes{
     background-color: rgba(0, 0, 0, 0.1);
-    height: 80px;
+    height: 100px;
     flex: 1;
-    border-radius: 20px 20px 5px 5px;
+    border-radius: 20px 20px 0 0 ;
     color: #fff;
     display: flex;
     align-items: center;
@@ -55,12 +75,33 @@ body{
     font-size: 25px;
     color: #fff;
     transition: all 0.3s ease-in-out;
+    border: solid 2px rgba(255, 255, 255, 0.2);
 }
 
+.box-clock span{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all .3s ease-in-out ;
+}
 
-@media (max-width: 350px){
+@media (max-width: 400px){
+    .box-clock{
+        width: 330px;
+        height: 150px;
+    }
     .hours,.seconds,.minutes {
         font-size: 20px;
+        height: 80px;
+    }
+    .box-clock span{
+        font-size: 15px;
     }
 }
 

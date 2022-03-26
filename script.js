@@ -1,7 +1,21 @@
 let hours = document.querySelector('.hours h1'),
     minutes = document.querySelector('.minutes h1'),
-    seconds = document.querySelector('.seconds h1');
+    seconds = document.querySelector('.seconds h1'),
+    ampm = document.querySelector('.box-clock span');
 
+let date = new Date()
+
+function AmPm() {
+    time()
+    let atualDate = parseInt(hours.textContent + minutes.textContent + seconds.textContent)
+
+    if(atualDate == 000000 || atualDate <= 115999){
+        ampm.innerHTML = 'am'
+    }
+    else if(atualDate >= 120000 || atualDate <= 125999){
+        ampm.innerHTML = 'pm'
+    }
+}
 function padAdd(){
     if (hours.textContent.length == 1 ) {
         hours.textContent = '0' + hours.textContent 
@@ -15,9 +29,7 @@ function padAdd(){
 }
 
 function time() {
-    let date = new Date()
-    
-    
+    date = new Date()
     hours.innerHTML = date.getHours()
     minutes.innerHTML = date.getMinutes()
     seconds.innerHTML = date.getSeconds()
@@ -25,5 +37,6 @@ function time() {
 }
 
 
-setInterval(time,1000)
+setInterval(time,1000) 
+setInterval(AmPm,59000)   // 1000 ms == 1s
 
