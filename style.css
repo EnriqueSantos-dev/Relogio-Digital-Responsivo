@@ -46,10 +46,8 @@ body{
     position: absolute;
     content: '';
     width: 50%;
-    margin: 0 auto;
-    height: 5px;
-    background-color: rgba(255, 255, 255, 0.4);
-    
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.4); 
 }
 .box-clock::before{
     top:0;

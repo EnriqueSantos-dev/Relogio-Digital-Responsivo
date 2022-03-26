@@ -37,6 +37,6 @@ function time() {
 }
 
 
-setInterval(time,1000) 
-setInterval(AmPm,59000)   // 1000 ms == 1s
+setInterval(time,1000) // 1000 ms == 1s
+setInterval(AmPm,59000) //59000 ms == 59min
 
