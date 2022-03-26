@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+.container{
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+.box-clock{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter:blur(10px) ;
+    box-shadow: 0 0 10px #333;
+    width: 330px;
+    height: 150px;
+    border-radius: 30px 30px 10px 10px;
+    padding: 10px 20px;
+    gap: 10px;
+}
+.box-clock i{
+    font-size: 40px;
+    color:#fff ;
+}
+.hours,.seconds,.minutes{
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 80px;
+    flex: 1;
+    border-radius: 20px 20px 5px 5px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+
+@media (max-width: 350px){
+    .hours,.seconds,.minutes {
+        font-size: 20px;
+    }
+}
+
+
