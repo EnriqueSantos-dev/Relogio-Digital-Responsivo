@@ -13,17 +13,15 @@ const AmPm = () => {
 }
 
 
-const time = () => {
-    date = new Date()
-
+const time = setInterval(() => {
+    date = new Date();
     hours.innerHTML = date.getHours();
-    minutes.innerHTML = date.getMinutes()
-    seconds.innerHTML = date.getSeconds()
+    minutes.innerHTML = date.getMinutes();
+    seconds.innerHTML = date.getSeconds();
 
     if (hours.textContent < 10) hours.textContent = '0' + hours.textContent;
     if (minutes.textContent < 10) minutes.textContent = '0' + minutes.textContent;
     if (seconds.textContent < 10) seconds.textContent = '0' + seconds.textContent;
-    AmPm()
-}
+    AmPm();
 
-setInterval(time, 1000) // 1000 ms == 1s
+},1000)         // 1000 ms == 1s
